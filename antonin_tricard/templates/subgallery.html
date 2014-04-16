@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style = "margin-top:100px;">
+{{ gallery.name }}
+
+<link href="/static/css/mypackery.css" rel="stylesheet">
+
+<div class="packery">
+	{% for nested in nesteds %}
+	<img src={{ nested.get_thumb }} />
+	{% endfor %}
+	{% for photo in photos %}
+	<img class="item" src={{ photo.get_display_url }} />
+	{% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://packery.metafizzy.co/packery.pkgd.min.js"></script>
+	<script src="/static/js/mypackery.js"></script>
+{% endblock %}
