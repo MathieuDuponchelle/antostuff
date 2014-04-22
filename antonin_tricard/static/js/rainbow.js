@@ -129,8 +129,7 @@ ZZ.changeColor = function() {
 ZZ.Groover = function( elem ) {
   
   this.elem = elem;
-  this.panes = parseInt( this.elem.getAttribute('data-groover-panes'), 10 );
-  
+  this.panes = 10;
   this.colorTime = ~~( Math.random() * 360 );
   this.waveTheta = 0;
 
@@ -154,7 +153,7 @@ ZZ.Groover.prototype.handleEvent = function( event ) {
 };
 
 ZZ.Groover.prototype.mouseoverHandler = function() {
-  this.isHovered = true;
+  this.isHovered = false;
 };
 
 ZZ.Groover.prototype.mouseoutHandler = function() {

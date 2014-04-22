@@ -1,0 +1,67 @@
+/* ----------------- metafizzy.co styles ----------------- */
+
+@font-face {
+    font-family: "hvd";
+    src: url("/static/fonts/wood.otf");
+}
+
+/* ----------------- HTML5 ✰ Boilerplate ----------------- */
+
+
+
+/*
+ * minimal base styles
+ */
+
+
+
+/*
+::-moz-selection { background: #FF5E99; color:#fff; text-shadow: none; }
+::selection      { background: #FF5E99; color:#fff; text-shadow: none; }
+*/
+
+/*a:link { -webkit-tap-highlight-color: #FF5E99; }*/
+
+body {
+  background: #1D1D1D;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+  color: #999;
+  color: hsla( 0, 0%, 100%, 0.7 );
+}
+
+/**** Index ****/
+
+.index #masthead {
+  text-align: center;
+  padding: 20px;
+  max-width: 100%;
+}
+
+.index #masthead h1 {
+  width: 100%;
+  font-weight: 200;
+  font-style: italic;
+  color: hsla(0 0%, 0%, 0.8);
+  font-size: 42px;
+  margin-bottom: 0.1em;
+  font-family: "Plaster";
+  max-width: 100%;
+}
+
+
+.fontface .index #masthead h1 {
+  font-style: normal;
+  font-size: 80px;
+  color: #EEEEEE;
+}
