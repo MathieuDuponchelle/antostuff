@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+			<title>{% block title %}{% endblock %}</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<!-- Bootstrap -->
+				<link href="/static/css/bootstrap.css" rel="stylesheet" media="screen" />
+				<link href="/static/css/interviews.css" rel="stylesheet" media="screen" />
+			</head>
+			<body id="mybody" style="background: #111111;">
+				<!-- Navigation -->
+				{% block content %}{% endblock %}
+				<script src="/static/js/jquery.js"></script>
+				<script src="/static/js/bootstrap.min.js"></script>
+				{% block scripts %}
+				{% endblock %}
+			</body>
+		</html>
