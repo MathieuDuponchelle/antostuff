@@ -40,7 +40,7 @@ USE_TZ = True
 MEDIA_ROOT = os.path.join(TOP_FOLDER, 'public', 'media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(TOP_FOLDER, 'public', 'static')
+STATIC_ROOT = os.path.join(TOP_FOLDER, 'websitestatic', 'static')
 STATIC_URL = '/static/'
 
 # Additional locations of static files
