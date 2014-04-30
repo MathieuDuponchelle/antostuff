@@ -4,6 +4,7 @@ import os
 import sys
 from photologue import PHOTOLOGUE_APP_DIR
 import local_settings
+from local_settings import SECRET_KEY
 
 DEBUG = TEMPLATE_DEBUG = True
 
@@ -37,7 +38,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-MEDIA_ROOT = os.path.join(TOP_FOLDER, 'public', 'media')
+MEDIA_ROOT = os.path.join(TOP_FOLDER, 'websitestatic', 'media')
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(TOP_FOLDER, 'websitestatic', 'static')
