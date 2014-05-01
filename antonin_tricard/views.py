@@ -24,5 +24,6 @@ def home(request):
         if gallery.parent is None:
             root_galleries.append(gallery)
 
+    context["galleries"] = NestedGallery.objects.all()
     context["photos"] = Photo.objects.all()
     return render_to_response("subgallery.html", context)

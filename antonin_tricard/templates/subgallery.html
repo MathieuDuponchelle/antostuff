@@ -32,20 +32,16 @@
 					<ul id="filters">
 						<li>
 							<button class="button is-checked" data-filter="*">
-								<img src="/static/img/x-ALL.png"/> 
+								All
 							</button>
 						</li>
+						{% for gallery in galleries %}
 						<li>
-							<button class="button" data-filter=".ffezfzefez">
-								<img src="/static/img/x-LIFESTYLE.png"/>
+							<button class="button" data-filter=".{{ gallery.title }}">
+								{{ gallery.title }}
 							</button>
 						</li>
-						<li>
-							<button class="button" data-filter=".fashion">
-								<img src="/static/img/x-FASHION.png"/> 
-
-							</button>
-						</li>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
