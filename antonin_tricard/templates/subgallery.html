@@ -59,7 +59,7 @@
 		<div id="isocontainer" class="isotope photos clearfix">
 			{% for photo in photos %}
 			<div class="photo {{ photo.get_galleries_string }}" style="width: 400px; height:{{ photo.get_height_for_display_width }}px;">
-				<a href={{ photo.image.url }} rel="prettyPhoto[all_gal]" title="{{ photo.caption }}">
+				<a href={{ photo.get_better_url }} rel="prettyPhoto[all_gal]" title="{{ photo.caption }}">
 					<img width=400px height={{ photo.get_height_for_display_width }}px class="item" data-original={{ photo.get_display_url }} />
 				</a>
 			</div>
