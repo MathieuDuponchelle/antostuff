@@ -33,6 +33,16 @@ $(document).ready(function(){
 	var $layouts = 0;
 	var $win = $(window);
 
+	var signature = $('#masthead');
+	var myheader = $('#myheader');
+	signature.css("margin-top", myheader.height() / 2 - signature.height() / 2);
+
+	$('#contact_button').click(function () {
+		signature.animate({
+				'margin-top': 0
+		}, 500);
+	});
+
 	// Make sure lazy load works on filtering
 	var hollaback = function () {
 		console.log("triggered scroll !");
