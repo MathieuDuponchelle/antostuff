@@ -95,6 +95,8 @@ $(document).ready(function(){
 			if (($newWidth + 410) > $winWidth)
 				break;
 			$newWidth += 410;
+			if (($newWidth > 900))
+				break;
 		}
 		if ($oldWidth != $newWidth) {
 			$isocontainer.width($newWidth);

@@ -50,7 +50,7 @@ Animé par l’envie de faire du reportage à travers le monde, il continue sa r
 					<ul id="filters">
 						{% for gallery in galleries %}
 						<li>
-							<button style="border: 0px; color: black; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;" class="button {{ gallery.checked }}" data-filter=".{{ gallery.title }}">
+							<button style="border: 0px; color: black; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;" class="button {{ gallery.checked }}" data-filter=".{{ gallery.slug }}">
 								{{ gallery.title }}
 							</button>
 						</li>
