@@ -2,7 +2,6 @@
 
 {% block content %}
 
-<link href='http://fonts.googleapis.com/css?family=Plaster' rel='stylesheet' type='text/css'>
 <link href="/static/css/myisotope.css" rel="stylesheet"/>
 <link href="/static/css/rainbow.css" rel="stylesheet"/>
 <link href="/static/css/prettyPhoto.css" rel="stylesheet"/>
@@ -13,6 +12,14 @@
 	<div style="width: 320px; margin: auto; display: table-cell">
 		<div id="masthead">
 			<input type="image" id="contact_button" src="/static/img/signature.png" border="0"></input>
+		</div>
+		<div id="contact_text" style="width: 320px; margin: auto; opacity: 0.0; text-align: center">
+			Antonin is available as an escort boy every night except on Friday, because he respects sabbat.
+		</div>
+		<div style="position: absolute; bottom: 0; width:320px; margin: auto; text-align: center; left: 50%; margin-left: -160px">
+			<a id="scroll_to_nav" href="#navbar-wrapper">
+				Photos
+			</a>
 		</div>
 	</div>
 </div>
@@ -45,35 +52,36 @@
 			</div>
 		</div>
 	</div>
+</div>
 
 
-	<div style="margin: 15px auto; text-align: center;">
+<div style="margin: 15px auto; text-align: center;">
 
 
-		<div id="isocontainer" class="isotope photos clearfix">
-			{% for photo in photos %}
-			<div class="photo {{ photo.get_galleries_string }}" style="width: 400px; height:{{ photo.get_height_for_display_width }}px;">
-				<a href={{ photo.get_better_url }} rel="prettyPhoto[all_gal]" title="{{ photo.caption }}">
-					<img width=400px height={{ photo.get_height_for_display_width }}px class="item" data-original={{ photo.get_display_url }} />
-				</a>
-			</div>
-			{% endfor %}
+	<div id="isocontainer" class="isotope photos clearfix">
+		{% for photo in photos %}
+		<div class="photo {{ photo.get_galleries_string }}" style="width: 400px; height:{{ photo.get_height_for_display_width }}px;">
+			<a href={{ photo.get_better_url }} rel="prettyPhoto[all_gal]" title="{{ photo.caption }}">
+				<img width=400px height={{ photo.get_height_for_display_width }}px class="item" data-original={{ photo.get_display_url }} />
+			</a>
 		</div>
+		{% endfor %}
 	</div>
+</div>
 
-	{% endblock %}
+{% endblock %}
 
-	{% block scripts %}
-	<script src="http://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
-	<script src="/static/js/jquery.lazyload.js"></script>
-	<script src="/static/js/lazy.js"></script>
-	<script src="/static/js/rainbow.js"></script>
-	<script src="/static/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" charset="utf-8">
-		$(document).ready(function(){
-			$("a[rel^='prettyPhoto']").prettyPhoto({
-					gallery_markup: "",
-			});
+{% block scripts %}
+<script src="/static/js/jquery.isotope.min.js"></script>
+<script src="/static/js/jquery.lazyload.js"></script>
+<script src="/static/js/lazy.js"></script>
+<script src="/static/js/rainbow.js"></script>
+<script src="/static/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto({
+				gallery_markup: "",
 		});
-	</script>
-	{% endblock %}
+	});
+</script>
+{% endblock %}

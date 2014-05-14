@@ -33,14 +33,23 @@ $(document).ready(function(){
 	var $layouts = 0;
 	var $win = $(window);
 
+	// Animate signature to show contact infos
 	var signature = $('#masthead');
 	var myheader = $('#myheader');
-	signature.css("margin-top", myheader.height() / 2 - signature.height() / 2);
+	var signature_margin = myheader.height() / 2 - signature.height() / 2;
+	signature.css("margin-top", signature_margin);
 
 	$('#contact_button').click(function () {
 		signature.animate({
 				'margin-top': 0
-		}, 500);
+		}, {
+			duration: 500,
+			complete: function () {
+				$("#contact_text").animate({
+						'opacity': 1.0
+				}, 500);
+			}
+		});
 	});
 
 	// Make sure lazy load works on filtering
@@ -127,7 +136,7 @@ $(document).ready(function(){
 			}
 	});
 
-	// when Antonin is clicked
+	// when Photos is clicked
 	$("#scroll_to_nav").click(function (event) {
 		event.preventDefault();
 		//calculate destination place
