@@ -32,6 +32,7 @@ $(document).ready(function(){
 	var $isocontainer = $('#isocontainer');
 	var $layouts = 0;
 	var $win = $(window);
+	var expanded = false;
 
 	// Animate signature to show contact infos
 	var signature = $('#masthead');
@@ -41,16 +42,31 @@ $(document).ready(function(){
 	signature.css("margin-top", signature_margin);
 
 	$('#contact_button').click(function () {
+		if (expanded == false) {
 		signature.animate({
 				'margin-top': 0
 		}, {
 			duration: 500,
 			complete: function () {
+				expanded = true;
 				$("#contact_text").animate({
 						'opacity': 1.0
 				}, 500);
 			}
 		});
+		} else {
+		$("#contact_text").animate({
+				'opacity': 0.0
+		}, {
+			duration: 500,
+			complete: function () {
+				expanded = false;
+				signature.animate({
+						'margin-top': signature_margin
+				}, 500);
+			}
+		});
+		}
 	});
 
 	// Make sure lazy load works on filtering
