@@ -1,5 +1,6 @@
 from antonin_tricard.models import NestedGallery
 from django.shortcuts import render_to_response
+import sys
 
 def gallery(request, uuid):
     context = {}
@@ -22,6 +23,7 @@ def home(request):
     photos = []
     for gallery in galleries:
         for photo in gallery.public():
+            photo.dummy = gallery.title
             photos.append(photo)
         if gallery.parent is None:
             root_galleries.append(gallery)
