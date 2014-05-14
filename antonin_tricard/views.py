@@ -1,6 +1,5 @@
 from antonin_tricard.models import NestedGallery
 from django.shortcuts import render_to_response
-import sys
 
 def gallery(request, uuid):
     context = {}
@@ -20,14 +19,21 @@ def home(request):
 
     galleries = NestedGallery.objects.all()
     root_galleries = []
+    galls = []
     photos = []
     for gallery in galleries:
+        if gallery.title.lower().strip() == "everyday":
+            gallery.checked = "is-checked"
+            galls.insert(0, gallery)
+        else:
+            gallery.checked = ""
+            galls.append(gallery)
         for photo in gallery.public():
             photo.dummy = gallery.title
             photos.append(photo)
         if gallery.parent is None:
             root_galleries.append(gallery)
 
-    context["galleries"] = NestedGallery.objects.all()
+    context["galleries"] = galls
     context["photos"] = photos
     return render_to_response("subgallery.html", context)

@@ -35,14 +35,9 @@
 				</button>
 				<div class="navbar-collapse collapse" style="height:1px margin: 0 auto;">
 					<ul id="filters">
-						<li>
-							<button class="button is-checked" data-filter="*">
-								All
-							</button>
-						</li>
 						{% for gallery in galleries %}
 						<li>
-							<button class="button" data-filter=".{{ gallery.title }}">
+							<button class="button {{ gallery.checked }}" data-filter=".{{ gallery.title }}">
 								{{ gallery.title }}
 							</button>
 						</li>

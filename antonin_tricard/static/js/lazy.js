@@ -67,6 +67,7 @@ $(document).ready(function(){
 			failure_limit: Math.max($("img").length - 1, 0)
 	});
 
+	$isocontainer.isotope({ filter: ".EVERYDAY" });
 	// Filtering logic
 	$('#filters').on( 'click', 'button', function() {
 		var filterValue = $( this ).attr('data-filter');
