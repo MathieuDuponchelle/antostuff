@@ -1,5 +1,4 @@
 from antonin_tricard.models import NestedGallery
-from photologue.models import Photo
 from django.shortcuts import render_to_response
 
 def gallery(request, uuid):
@@ -20,10 +19,13 @@ def home(request):
 
     galleries = NestedGallery.objects.all()
     root_galleries = []
+    photos = []
     for gallery in galleries:
+        for photo in gallery.public():
+            photos.append(photo)
         if gallery.parent is None:
             root_galleries.append(gallery)
 
     context["galleries"] = NestedGallery.objects.all()
-    context["photos"] = Photo.objects.all()
+    context["photos"] = photos
     return render_to_response("subgallery.html", context)
