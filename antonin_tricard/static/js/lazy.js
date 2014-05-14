@@ -36,6 +36,7 @@ $(document).ready(function(){
 	// Animate signature to show contact infos
 	var signature = $('#masthead');
 	var myheader = $('#myheader');
+	myheader.height($win.height());
 	var signature_margin = myheader.height() / 2 - signature.height() / 2;
 	signature.css("margin-top", signature_margin);
 
